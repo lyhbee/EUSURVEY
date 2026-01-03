@@ -439,7 +439,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.6.8.Final</version>
+			<version>7.2.0.Final</version>
 			<type>jar</type>
 			<scope>compile</scope>
 			<exclusions>
@@ -635,10 +635,9 @@
 						<configuration>
 							<target description="update the properties xml file">
 								<tstamp>
-									<format property="touch.time" pattern="dd/MM/yyyy HH:mm" />
+									<format property="touch.time" pattern="dd/MM/yyyy HH:mm"/>
 								</tstamp>
-								<property name="version.footer.build"
-									value="v${project.version} ${buildNumber} (${touch.time})" />
+								<property name="version.footer.build" value="v${project.version} ${buildNumber} (${touch.time})"/>
 								<!-->
 								<scriptdef name="updatescmbranch"
 									language="javascript">
@@ -653,10 +652,8 @@
 								</scriptdef>
 								<updatescmbranch />-->
 								<echo>Version footer value = ${version.footer.build}</echo>
-								<property name="verfilename"
-									value="${basedir}/src/main/webapp/WEB-INF/views/versionfooter.txt" />
-								<echo output="${verfilename}"
-									message="${version.footer.build}" />
+								<property name="verfilename" value="${basedir}/src/main/webapp/WEB-INF/views/versionfooter.txt"/>
+								<echo output="${verfilename}" message="${version.footer.build}"/>
 							</target>
 						</configuration>
 						<goals>
@@ -669,15 +666,11 @@
 						<id>preparePackageAntCreateRevisionVersionPropertiesForALl</id>
 						<phase>prepare-package</phase>
 						<configuration>
-							<target
-								description="create version.txt for javascript refresh">
-								<property name="version.jscript.build"
-									value="${buildNumber}" />
+							<target description="create version.txt for javascript refresh">
+								<property name="version.jscript.build" value="${buildNumber}"/>
 								<echo>Version in text file = ${version.jscript.build}</echo>
-								<property name="jscriptname"
-									value="${basedir}/src/main/webapp/WEB-INF/views/version.txt" />
-								<echo output="${jscriptname}"
-									message="${version.jscript.build}" />
+								<property name="jscriptname" value="${basedir}/src/main/webapp/WEB-INF/views/version.txt"/>
+								<echo output="${jscriptname}" message="${version.jscript.build}"/>
 							</target>
 						</configuration>
 						<goals>
@@ -812,7 +805,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
